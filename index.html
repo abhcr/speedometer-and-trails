@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedometer and Trails App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(to bottom, #ff4500, #ffae42); /* Gradient background */
+            color: white;
+            padding-top: 30px;
+            min-height: 70px;
+            text-align: center;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+        header h1 {
+            font-weight: normal;
+        }
+        .feature {
+            padding: 20px;
+            border-bottom: 1px solid #404040;
+        }
+        .feature-image {
+            float: right;
+            max-width: 200px;
+            margin-left: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .feature-image::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)); /* Reflection effect */
+            position: absolute;
+            bottom: -50%;
+            border-radius: 10px;
+        }
+        footer {
+            background: linear-gradient(to bottom, #ffae42, #ff4500); /* Gradient background */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Speedometer and Trails</h1>
+        </div>
+    </header>
+    <div class="container">
+        <img src="screenshot.png" alt="App Screenshot" class="feature-image">
+        <div class="feature">
+            <h2>Real-Time Speed Display</h2>
+            <p>Get your current speed displayed on your iPhone with pinpoint accuracy. Your current location is marked in red, with blue trails showing where you have been.</p>
+        </div>
+        <div class="feature">
+            <h2>Set Speed Limits</h2>
+            <p>Set lower and upper speed limits with the Low and High buttons, beyond which the app will give an alert. Adjust the limits with a convenient slider featuring two grab points. The slider range can be changed by tapping on the icons at the right of the slider so that it is easy to select slower or faster limits. </p>
+        </div>
+        <div class="feature">
+            <h2>Historic Location Trail and Favorites</h2>
+            <p>Keep track of where you've been with a visual trail of your historic locations. Save up to 3 favorite locations for easy navigation by using the three pin buttons at the bottom. The favorite locations stay saved until you save a new location in the same colored button. </p>
+        </div>
+        <div class="feature">
+            <h2>Clear Your Trail</h2>
+            <p>Want to start fresh? Clear your trail with just a click to start a clean slate.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>Download Speedometer and Trails from the <a href="https://apps.apple.com/us/app/speedometer-and-trails/id6451039058" target="_blank" style="color: #ffffff;">App Store</a> today!</p>
+        </div>
+    </footer>
+</body>
+</html>
