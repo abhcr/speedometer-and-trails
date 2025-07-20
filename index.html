@@ -3,90 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Speedometer and Trails App</title>
+    <title>Speedometer & Trails App</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        /* Custom font family */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #1e1e1e;
-            color: #ffffff;
+            font-family: 'Inter', sans-serif;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: linear-gradient(to bottom, #ff4500, #ffae42); /* Gradient background */
-            color: white;
-            padding-top: 30px;
-            min-height: 70px;
-            text-align: center;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        }
-        header h1 {
-            font-weight: normal;
-        }
-        .feature {
-            padding: 20px;
-            border-bottom: 1px solid #404040;
-        }
-        .feature-image {
-            float: right;
-            max-width: 200px;
-            margin-left: 20px;
-            border-radius: 10px;
-            position: relative;
-        }
-        .feature-image::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 50%;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3)); /* Reflection effect */
-            position: absolute;
-            bottom: -50%;
-            border-radius: 10px;
-        }
-        footer {
-            background: linear-gradient(to bottom, #ffae42, #ff4500); /* Gradient background */
-            color: white;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        /* Custom gradient for the hero text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Speedometer and Trails</h1>
+<body class="bg-gray-900 text-gray-200 antialiased">
+
+    <!-- Header Section -->
+    <header class="py-12 md:py-20 bg-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-black text-gradient bg-gradient-to-r from-purple-400 via-red-400 to-yellow-400 mb-4">
+                Speedometer & Trails
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
+                The ultimate companion for your rides. Track your speed, map your journey, and now, analyze every turn with advanced lean angle metrics.
+            </p>
         </div>
     </header>
-    <div class="container">
-        <img src="screenshot.png" alt="App Screenshot" class="feature-image">
-        <div class="feature">
-            <h2>Real-Time Speed Display</h2>
-            <p>Get your current speed displayed on your iPhone with pinpoint accuracy. Your current location is marked in red, with blue trails showing where you have been. Tap on the speed to switch between kmph or mph. </p>
+
+    <!-- Main Content with Features -->
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Feature Card: Lean Angle Tracking -->
+            <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-purple-400 transition-all duration-300">
+                <div class="text-purple-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Advanced Lean Angle Tracking</h2>
+                <p class="text-gray-400">
+                    Experience your ride like never before with our new real-time lean angle gauge. The app tracks your every move, displaying your current lean angle and remembering your maximums for each ride. Recalibrate anytime with a tap or automatically when your heading changes.
+                </p>
+            </div>
+
+            <!-- Feature Card: Dynamic Color Trails -->
+            <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-red-400 transition-all duration-300">
+                 <div class="text-red-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Dynamic Color Trails</h2>
+                <p class="text-gray-400">
+                    Your location trail is now a vibrant reflection of your ride's intensity. The path shifts from green to red as you lean into turns (0-45°), and to a deep purple for extreme angles (45-90°), creating a beautiful and insightful map of your journey.
+                </p>
+            </div>
+
+            <!-- Feature Card: Real-Time Speed -->
+            <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-yellow-400 transition-all duration-300">
+                 <div class="text-yellow-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Real-Time Speed Display</h2>
+                <p class="text-gray-400">
+                    Get your current speed displayed with pinpoint accuracy. Your current location is marked in red, with color-coded trails showing where you've been. Tap the speed to instantly switch between km/h and mph.
+                </p>
+            </div>
+
+            <!-- Feature Card: Speed Limits -->
+            <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-green-400 transition-all duration-300">
+                <div class="text-green-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Custom Speed Alerts</h2>
+                <p class="text-gray-400">
+                    Set lower and upper speed limits with a convenient dual-handle slider. The app will alert you if you go above or below your set range. Easily switch between slow and fast speed ranges for precise control.
+                </p>
+            </div>
+
+            <!-- Feature Card: Location Trail -->
+            <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-blue-400 transition-all duration-300">
+                <div class="text-blue-400 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Favorites & Trail Management</h2>
+                <p class="text-gray-400">
+                    Keep track of where you've been with a visual trail. Save up to 3 favorite locations for easy reference. Want to start fresh? Clear your trail and max lean angles with a single tap.
+                </p>
+            </div>
+            
+            <!-- App Screenshot -->
+            <div class="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 flex items-center justify-center">
+                <img src="screenshot.png" alt="App Screenshot" class="rounded-lg shadow-2xl max-h-full">
+            </div>
+
         </div>
-        <div class="feature">
-            <h2>Set Speed Limits</h2>
-            <p>Set lower and upper speed limits with the Low and High buttons, beyond which the app will give an alert. Adjust the limits with a convenient slider featuring two grab points. The slider range can be changed by tapping on the icons at the right of the slider so that it is easy to select slower or faster limits. </p>
-        </div>
-        <div class="feature">
-            <h2>Historic Location Trail and Favorites</h2>
-            <p>Keep track of where you've been with a visual trail of your historic locations. Save up to 3 favorite locations for easy navigation by using the three pin buttons at the bottom. The favorite locations stay saved until you save a new location in the same colored button. </p>
-        </div>
-        <div class="feature">
-            <h2>Clear Your Trail</h2>
-            <p>Want to start fresh? Clear your trail with just a click to start a clean slate.</p>
-        </div>
-    </div>
-    <footer>
-        <div class="container">
-            <p>Download Speedometer and Trails from the <a href="https://apps.apple.com/us/app/speedometer-and-trails/id6451039058" target="_blank" style="color: #ffffff;">App Store</a> today!</p>
+    </main>
+
+    <!-- Footer with App Store Link -->
+    <footer class="mt-20 py-10 bg-gray-900/70">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400 mb-4">Ready to elevate your ride?</p>
+            <a href="https://apps.apple.com/us/app/speedometer-and-trails/id6451039058" target="_blank" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                Download on the App Store
+            </a>
         </div>
     </footer>
+
 </body>
 </html>
